@@ -1,0 +1,160 @@
+﻿<!--CSS Code for page-->
+<link href="~/css/Background2.css" rel="stylesheet" />
+<head>
+    <style>
+
+        /*Image Design*/
+        .square-image {
+            width: 500px;
+            height: 500px;
+            margin-right: 50px;
+        }
+        /* Radio Button Design */
+        /* Hide round disc part of radio button */
+        input[type=radio] {
+            display: none;
+            margin: 10px;
+        }
+
+            /* Change the radio button label design
+                Add margin, padding, colour */
+            input[type=radio] + label {
+                display: inline-block;
+                margin: 5px;
+                padding: 4px 12px;
+                background-color: #09a7d4;
+                color: #f7fffa;
+                border-radius: 8px;
+            }
+
+            /* Change background and label color for label when selected */
+            input[type=radio]:checked + label {
+                background-image: none;
+                background-color: #f7fffa;
+                color: #09a7d4;
+                border-radius: 8px;
+            }
+
+
+        /*Button*/
+        .submit-button {
+            display: inline-block;
+            margin: 5px;
+            padding: 4px 12px;
+            background-color: #068fc6;
+            color: #f7fffa;
+            border-color: transparent;
+            border-radius: 8px;
+        }
+
+            /* Change styles on hover */
+            .submit-button:hover {
+                background-color: #f7fffa;
+                color: #09a7d4;
+            }
+    </style>
+
+</head>
+
+<body>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <section class="container" style="margin-top:100px;">
+        <h1 style="text-align: center; color: #f7fffa; padding-top:5px;">Volunteer Now!</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <!--Image-->
+                <img src="~/images/dummy.jpg" alt="Image" class="square-image" />
+
+            </div>
+            <div class="col-md-6">
+                <!--Information-->
+                <p style="text-align: justify; height: 500px; overflow: auto;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus convallis gravida. Aenean eget metus mauris. Proin tristique est vel libero finibus, id interdum metus hendrerit. Donec auctor, elit vel rhoncus ultricies, purus turpis consequat odio, id cursus ipsum mauris id leo. Nullam vitae massa sed leo dignissim dapibus. Aliquam non mi vitae tellus egestas consequat. Nulla facilisi. In fringilla mi vel pellentesque aliquet. Aliquam a diam hendrerit, laoreet ipsum a, convallis erat. Phasellus at sem nisi. Proin dapibus sapien vel odio cursus, sed consequat velit malesuada. In venenatis mauris vel sapien rutrum ultricies.
+
+                    Vivamus semper tincidunt tortor ac iaculis. Vestibulum lacinia, arcu et scelerisque varius, enim ex mattis enim, ac rutrum lacus nisi ac risus. Nulla sit amet leo ac dolor scelerisque consectetur. Cras vitae ligula eu diam cursus dignissim vel nec quam. Vestibulum vel rutrum massa. Mauris dignissim ultrices metus, in condimentum sem eleifend nec. Nullam varius iaculis turpis, sed sagittis tellus sagittis non. In congue diam quis tellus viverra tempus. Nulla dapibus malesuada tristique. Nunc eget lobortis diam, eget aliquet nisi. Integer feugiat odio mi, eu mollis lacus tempus ac. Nullam convallis risus sed ultricies malesuada. Aenean convallis risus nec turpis sagittis, et rutrum sapien tincidunt.
+
+                    Sed tristique, ipsum a bibendum dapibus, ligula sapien volutpat neque, sed egestas orci arcu ut mi. Donec at enim non tellus lobortis condimentum. Sed lobortis auctor sapien. Suspendisse quis lectus non ante malesuada cursus. Donec lacinia felis felis, sed finibus urna mattis sed. Vivamus eleifend pretium magna, ut suscipit purus eleifend id. Sed pulvinar lacus eu lectus dignissim, a pulvinar nibh scelerisque. Vestibulum vitae est faucibus, lacinia tellus at, aliquet turpis. Donec tristique sagittis leo, eu dapibus velit pulvinar nec. Vestibulum sodales lorem non libero varius sollicitudin. Phasellus faucibus tincidunt eros, sed congue lacus luctus a. Sed ultricies nisi in enim pellentesque lobortis.
+
+                    Fusce posuere felis at facilisis pharetra. Quisque elementum dui libero, eu cursus ex sagittis id. Mauris varius quam non rutrum pulvinar. Mauris id nulla in neque scelerisque feugiat et id est. Curabitur in odio tincidunt, maximus velit nec, lacinia lorem. Suspendisse ultrices malesuada odio id faucibus. Sed a arcu ac enim vehicula ullamcorper. In nec leo vitae sapien sagittis malesuada. Nullam dignissim volutpat metus, a pulvinar quam laoreet nec. Cras mattis enim id magna facilisis bibendum. Integer dignissim arcu nec lacus pulvinar consectetur. Nulla et dui eu turpis dapibus consectetur sed id diam. Aenean eu felis ut nisl placerat euismod. In viverra fringilla diam vel convallis.
+                </p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!--Sign Up Sheet-->
+    <section class="sign-up-options" style="text-align: center; background-color: #09a7d4; border-radius: 8px; margin-bottom: 150px;">
+        <h1 style="text-align: center; color: #f7fffa; padding-top:5px;">Sign Up</h1>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="form-group" style=" width: 450px; height: fit-content; justify-content: center; align-items: center;">
+                    <label style="text-align: center; color: #f7fffa; padding-top:5px;">Please download, fill out the form and upload it to sign up </label>
+                    <!--Download Form-->
+                    <a href="*" class="submit-button">Download Form</a><!--Insert Form link/path to href-->
+                    <!--Upload Form-->
+                    <form enctype="multipart/form-data" method="post">
+
+                        <div class="form-group">
+                            <div class="custom-file">
+                                <!--asp-for="Input.SignUpFile"--> <input class="custom-file-input" id="customFile" multiple onchange="updateFileNameLabel()" />
+                                <label class="custom-file-label" for="customFile" id="fileNameLabel">Choose Files</label>
+                            </div>
+                            <!--asp-validation-for="Input.SignUpFile"--> <span class="text-danger"></span>
+                        </div>
+
+
+                        <input asp-page-handler="Upload" class="submit-button" type="submit" value="Upload" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Script to update the document file label to display the file name after it is uploaded-->
+    <script>
+        function updateFileNameLabel() {
+            var input = document.getElementById("customFile");
+            var label = document.getElementById("fileNameLabel");
+
+            if (input.files.length > 0) {
+                label.innerText = input.files[0].name;
+            } else {
+                label.innerText = "Choose File";
+            }
+        }
+    </script>
+    <!--Scrollreveal js-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--js link-->
+    <script src="~/js/site.js"></script>
+
+    <script>
+
+        //Scroll Effect
+        const sr = ScrollReveal({
+            distance: '65px',
+            duration: 2000,
+            delay: 450,
+            reset: true
+        });
+
+        sr.reveal('section', { delay: 200, origin: 'top' });
+
+    </script>
+</body>

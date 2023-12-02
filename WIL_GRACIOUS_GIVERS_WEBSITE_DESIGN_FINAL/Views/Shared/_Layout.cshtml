@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WIL_PROJECT_GRACIOUS_GIVERS_WEBSITE_DESIGN</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/navbar.css" />
+</head>
+<body style="background-color: #068fc6; font-family:Quicksand">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow  mb-3" style="background-color: #09a7d4; color: #f7fffa;">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item nav">
+                            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="margin-right: 15px;">
+                                <img src="~/images/Icons/newLogo.png" style="height: 70px; width: 70px; border-radius:5%;" />
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item nav">
+                            <a class="nav-link" style="color: #f7fffa;" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item nav">
+                            <a class="nav-link" style="color: #f7fffa;" asp-area="" asp-controller="Donation" asp-action="Index">Donation</a>
+                        </li>
+                        <li class="nav-item nav">
+                            <a class="nav-link" style="color: #f7fffa;" asp-area="" asp-controller="Volunteer" asp-action="Index">Volunteer</a>
+                        </li>
+                        <li class="nav-item nav">
+                            <a class="nav-link" style="color: #f7fffa;" asp-area="" asp-controller="Feedback" asp-action="Index">Feedback</a>
+                        </li>
+                        <li class="nav-item nav">
+                            <a class="nav-link" style="color: #f7fffa;" asp-area="" asp-controller="Purpose" asp-action="Index">Our Purpose</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+        <style>
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                z-index: 999;
+                transition: transform 0.3s ease-in-out;
+            }
+
+                .navbar.hidden {
+                    transform: translateY(-100%);
+                }
+
+            .footer {
+                line-height: 30px;
+            }
+        </style>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class=" footer text-muted box-shadow  mb-3" style="background-color: #09a7d4; ">
+        <div style="margin-top:10px; margin-left: 50px; margin-right:50px; color: #f7fffa; text-align:center; ">
+            <div class="row" style="justify-content: center;">
+
+                <!--About Us Column-->
+                <div class="col-md-3">
+                    <h4 style="font-weight:bold">Contact Us</h4>
+                    <div>
+                        <p style="padding:5px; margin:0px;">Email: </p>
+                    </div>
+                    <div>
+                        <p style="padding:5px; margin:0px;">Phone Number: </p>
+                    </div>
+
+
+                </div>
+                <!--Social Media Column-->
+                <div class="col-md-3">
+                    <h4 style="font-weight:bold">Stay Connected With Us</h4>
+                    <div style=" padding:5px;">
+                        <!--Clickable Icon-->
+                        <a href="*"><img src="~/images/Icons/facebook.png" alt="Facebook" style="width: 30px; height: 30px; margin-right: 5px;"></a>
+                        <a href="*"><img src="~/images/Icons/instagram.png" alt="Instagram" style="width: 30px; height: 30px; "></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:10px;">
+                <p>Copyright &copy;Gracious Givers. Designed by <span>Vita Innovations</span></p>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/LoginAndReg.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

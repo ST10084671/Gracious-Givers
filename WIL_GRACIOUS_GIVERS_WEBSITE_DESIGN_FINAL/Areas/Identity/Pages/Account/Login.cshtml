@@ -1,0 +1,155 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<link href="~/css/Background1.css" rel="stylesheet" />
+<head>
+    <style>
+
+
+        /*Button*/
+        .btn.btn-primary {
+            display: inline-block;
+            margin: 5px;
+            padding: 4px 12px;
+            /*background-color: #09a7d4;*/
+            background-color: #068fc6;
+            color: #f7fffa;
+            border-color: transparent;
+            border-radius: 8px;
+        }
+
+            .btn.btn-primary:hover {
+                /* Change styles on hover */
+                background-color: #f7fffa;
+                color: #09a7d4;
+            }
+
+        /*Facebook Button*/
+        .btn.btn-facebook {
+            display: inline-block;
+            width: 250px;
+            margin: 5px;
+            padding: 4px 12px;
+            background-color: #1877F2;
+            color: #f7fffa;
+            border-radius: 8px;
+        }
+
+            .btn.btn-facebook:active {
+                /* Change styles on click */
+                background-color: #175bb3;
+                color: #f7fffa;
+            }
+        /*Google Button*/
+        .btn.btn-google {
+            display: inline-block;
+            width: 250px;
+            margin: 5px;
+            padding: 4px 12px;
+            background-color: #f7fffa;
+            border-radius: 8px;
+        }
+
+            .btn.btn-google:active {
+                /* Change styles on click */
+                background-color: #dbdbdb;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <section style=" display: flex; justify-content: center; align-items: center;">
+        <section class="container-custom" style="text-align: center; margin-top: 100px; margin-bottom: 150px;">
+            <div class="card-custom" style="height: fit-content;">
+                <h1 style="text-align: center; color: #f7fffa; padding-top:5px;">Login</h1>
+                <div class="card-body" style="color: #f7fffa; ">
+                    <form id="account" method="post">
+                        <h5 style="text-align: center;">Please enter your Log in details below.</h5>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                            <p>
+                                <a id="forgot-password" asp-page="./ForgotPassword" style="color:#f7fffa;">Forgot your Password?</a>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label asp-for="Input.RememberMe">
+                                    <input asp-for="Input.RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">Log in</button>
+                        </div>
+
+                        <label>OR</label>
+                        <!--Login with Facebook or Google: TEMP -> NEED TO UPDATE-->
+                        <div>
+                            <a href="/Account/ExternalLogin?provider=Facebook" class="btn btn-facebook">
+                                <img src="~/images/LoginAndReg/facebook_icon.png" style="width: 10px; text-align: left; margin-right: 10px;" />Login with Facebook
+                            </a>
+                        </div>
+
+
+                        <div style="padding-top:10px;">
+                            <a href="/Account/ExternalLogin?provider=Google" class="btn btn-google">
+                                <img src="~/images/LoginAndReg/google_icon.png" style="width:30px; margin-left:0px; margin-right:10px;" /> Login with Google
+                            </a>
+                        </div>
+
+                        <div class="form-group" style="text-align: center;">
+
+                            <p>
+                                Don't have an account?
+                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" style="color:#f7fffa;">Register here</a>
+                            </p>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+    <br />
+    <br />
+    <!--Scrollreveal js-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--js link-->
+    <script src="~/js/site.js"></script>
+
+    <script>
+
+        //Scroll Effect
+        const sr = ScrollReveal({
+            distance: '65px',
+            duration: 2000,
+            delay: 450,
+            reset: true
+        });
+
+        sr.reveal('section', { delay: 200, origin: 'top' });
+
+    </script>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+</body>

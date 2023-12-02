@@ -1,0 +1,8 @@
+﻿initial-image {
+    min-height: 100%;
+    background-image: url(image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+

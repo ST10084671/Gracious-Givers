@@ -1,0 +1,324 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<link href="~/css/Background1.css" rel="stylesheet" />
+<head>
+    <style>
+        /* Radio Button Design */
+        /* Hide round disc part of radio button */
+        input[type=radio] {
+            display: none;
+            margin: 10px;
+        }
+
+            /* Change the radio button label design
+                Add margin, padding, colour */
+            input[type=radio] + label {
+                display: inline-block;
+                margin: 5px;
+                padding: 4px 12px;
+                /*background-color: #09a7d4;*/
+                background-color: #068fc6;
+                color: #f7fffa;
+                border-radius: 8px;
+            }
+
+            /* Change background and label color for label when selected */
+            input[type=radio]:checked + label {
+                background-image: none;
+                background-color: #f7fffa;
+                color: #09a7d4;
+                border-radius: 8px;
+            }
+
+        /*Button*/
+        .btn.btn-primary {
+            display: inline-block;
+            margin: 5px;
+            padding: 4px 12px;
+            /*background-color: #09a7d4;*/
+            background-color: #068fc6;
+            color: #f7fffa;
+            border-color: transparent;
+            border-radius: 8px;
+        }
+
+            .btn.btn-primary:hover {
+                /* Change styles on hover */
+                background-color: #f7fffa;
+                color: #09a7d4;
+            }
+
+        /*Facebook Button*/
+        .btn.btn-facebook {
+            display: inline-block;
+            width: 250px;
+            margin: 5px;
+            padding: 4px 12px;
+            background-color: #1877F2;
+            color: #f7fffa;
+            border-radius: 8px;
+        }
+
+            .btn.btn-facebook:active {
+                /* Change styles on click */
+                background-color: #175bb3;
+                color: #f7fffa;
+            }
+        /*Google Button*/
+        .btn.btn-google {
+            display: inline-block;
+            width: 250px;
+            margin: 5px;
+            padding: 4px 12px;
+            background-color: #f7fffa;
+            border-radius: 8px;
+        }
+
+            .btn.btn-google:active {
+                /* Change styles on click */
+                background-color: #dbdbdb;
+            }
+    </style>
+
+    <!--Scrollreveal js-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--js link-->
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <section style=" display: flex; justify-content: center; align-items: center;">
+        <section class="container-custom" style="text-align: center; margin-top: 100px; margin-bottom: 150px;">
+            <div class="card-custom" style="height: fit-content;">
+                <h1 style="text-align: center; color: #f7fffa; padding-top:5px;">Registration</h1>
+                <div class="card-body" style="color: #f7fffa; ">
+                    <!--Radial Buttons to select Account Type-->
+                    <div class="form-group">
+
+                        <label>Select Account Type:</label>
+                        <div class="amount-option">
+                            <input type="radio" name="accountType" id="userAccount" value="user" checked>
+                            <label class="form-check-label" for="userAccount">
+                                Register an Individual User Account
+                            </label>
+
+                            <input type="radio" name="accountType" id="companyAccount" value="company">
+                            <label class="form-check-label" for="companyAccount">
+                                Register a Company Account
+                            </label>
+                        </div>
+                    </div>
+
+                    <!--Registration inputs, wrapped according to radial buttons-->
+                    <!--Individual Account Fields-->
+                    <div id="userAccountFields">
+
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+                            <!--Additional Fields NEED TO UPDATE TO PROPER VARIABLES FROM CUSTOM USERIDENTITY-->
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Surname</label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <!--Standard Fields-->
+                            <div class="form-group">
+                                <label asp-for="Input.Email"></label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Input.Password"></label>
+                                <div class="input-group">
+                                    <input asp-for="Input.Password" class="form-control password-field" />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <input type="checkbox" class="show-password-toggle" />
+                                            <label class="form-check-label" for="showPasswordToggle">Show Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Input.ConfirmPassword"></label>
+                                <div class="input-group">
+                                    <input asp-for="Input.ConfirmPassword" class="form-control password-field" />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <input type="checkbox" class="show-password-toggle" />
+                                            <label class="form-check-label" for="showConfirmPasswordToggle">Show Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                            <!--Sign up button-->
+
+                            <div class="form-group" style="text-align: center; padding-top:10px;">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+
+                            <label>OR</label>
+                            <!--Sign up with Facebook or Google: TEMP -> NEED TO UPDATE-->
+                            <div>
+                                <a href="/Account/ExternalLogin?provider=Facebook" class="btn btn-facebook">
+                                    <img src="~/images/LoginAndReg/facebook_icon.png" style="width: 10px; text-align: left; margin-right: 10px;" />Sign up with Facebook
+                                </a>
+                            </div>
+
+
+                            <div style="padding-top:10px;">
+                                <a href="/Account/ExternalLogin?provider=Google" class="btn btn-google">
+                                    <img src="~/images/LoginAndReg/google_icon.png" style="width:30px; margin-left:0px; margin-right:10px;" /> Sign up with Google
+                                </a>
+                            </div>
+
+                        </form>
+
+                        <!--Log in Hyperlink if user already has an account-->
+                        <p>
+                            Already have an account?
+                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" style="color:#f7fffa;">Login here</a>
+                        </p>
+
+
+                    </div>
+
+                    <!--Company Account Fields-->
+                    <div id="companyAccountFields" style="display: none;">
+
+                        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                            <!--Additional Fields NEED TO UPDATE TO PROPER VARIABLES FROM CUSTOM USERIDENTITY-->
+                            <div class="form-group">
+                                <label>Company Name</label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Company Address</label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Company Phone Number</label>
+                                <input asp-for="Input.Email" class="form-control" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+
+                            <!--Following uses a Collection allowing users to upload multiple documents-->
+                            <div class="form-group">
+                                <label asp-for="Input.SuppFiles" class="control-label">Upload Supporting Documents</label>
+                                <div class="custom-file">
+                                    <input asp-for="Input.SuppFiles" class="custom-file-input" id="customFile" multiple onchange="updateFileNameLabel()" />
+                                    <label class="custom-file-label" for="customFile" id="fileNameLabel">Choose Files</label>
+                                </div>
+                                <span asp-validation-for="Input.SuppFiles" class="text-danger"></span>
+                            </div>
+
+                            <!--Standard inputs-->
+                            <div class="form-group">
+                                <label asp-for="Input.Password"></label>
+                                <div class="input-group">
+                                    <input asp-for="Input.Password" class="form-control password-field" />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <input type="checkbox" class="show-password-toggle" />
+                                            <label class="form-check-label" for="showPasswordToggle">Show Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Input.ConfirmPassword"></label>
+                                <div class="input-group">
+                                    <input asp-for="Input.ConfirmPassword" class="form-control password-field" />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <input type="checkbox" class="show-password-toggle" />
+                                            <label class="form-check-label" for="showConfirmPasswordToggle">Show Password</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                            </div>
+
+                            <!--Sign up button-->
+
+                            <div class="form-group" style="text-align: center; padding-top:10px;">
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+
+                        <hr />
+                        <!--Log in Hyperlink if user already has an account-->
+                        <p>
+                            Already have an account?
+                            <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" style="color:#f7fffa;">Register here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <br />
+    <br />
+    <!--Script to update the document file label to display the file name after it is uploaded-->
+    <script>
+        function updateFileNameLabel() {
+            var input = document.getElementById("customFile");
+            var label = document.getElementById("fileNameLabel");
+
+            if (input.files.length > 0) {
+                label.innerText = input.files[0].name;
+            } else {
+                label.innerText = "Choose File";
+            }
+        }
+    </script>
+    <!--Scrollreveal js-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--js link-->
+    <script src="~/js/site.js"></script>
+
+    <script>
+
+        //Scroll Effect
+        const sr = ScrollReveal({
+            distance: '65px',
+            duration: 2000,
+            delay: 450,
+            reset: true
+        });
+
+        sr.reveal('section', { delay: 200, origin: 'top' });
+
+    </script>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+
+
+</body>
